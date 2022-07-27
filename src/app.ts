@@ -10,12 +10,16 @@ import {
     getAllBooks,
     getBookAuthorByIndex,
     getBookByID,
+    getBooksByCategory,
+    getBooksByCategoryPromise,
     getBookTitlesByCategory,
     getObjectProperty,
     getProperty,
     getTitles,
     logBookTitles,
+    logCategorySearch,
     logFirstAvailable,
+    logSearchResults,
     printBook,
     printRefBook,
     purge,
@@ -270,3 +274,42 @@ function showHello(divName: string, name: string) {
 // refBook.copies = 0;
 // refBook.copies = 4.5;
 // refBook.copies = 5;
+
+// Task 09.01
+// console.log('before');
+// getBooksByCategory(Category.JavaScript, logCategorySearch);
+// getBooksByCategory(Category.Software, logCategorySearch);
+// console.log('after');
+
+// Task 09.02
+// console.log('before');
+// getBooksByCategoryPromise(Category.JavaScript)
+//     .then(categories => {
+//         console.log(categories);
+//         return categories.length;
+//     })
+//     .then(lenght => {
+//         console.log(lenght);
+//     })
+//     .catch(e => {
+//         console.log(e);
+//     });
+
+// getBooksByCategoryPromise(Category.Software)
+//     .then(categories => {
+//         console.log(categories);
+//         return categories.length;
+//     })
+//     .then(lenght => {
+//         console.log(lenght);
+//     })
+//     .catch(e => {
+//         console.log(e);
+//     });
+// console.log('after');
+
+// Task 09.03
+// console.log('before');
+// logSearchResults(Category.JavaScript);
+// logSearchResults(Category.Software).catch(e => console.log(e));
+// console.log('after');

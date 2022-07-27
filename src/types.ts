@@ -1,4 +1,4 @@
-import { createCustomer } from './functions';
+import { createCustomer, getBooksByCategoryPromise } from './functions';
 import { Author, Book, Person } from './interfaces';
 
 type PersonBook = Person & Book;
@@ -33,6 +33,8 @@ type RemoveProps<T extends object, TProps extends keyof T> = {
 
 type BookRequiredPropsType = RemoveProps<Book, BookOptionalProps>;
 type BookOptionalPropsType = RemoveProps<Book, BookRequiredProps>;
+type Unpromisify<T> = T extends Promise<infer R> ? R : never;
+type Rt = Unpromisify<ReturnType<typeof getBooksByCategoryPromise>>;
 
 export {
     PersonBook,
